@@ -10,3 +10,14 @@
 *.lai
 *.la
 *.a
+
+# Compiled binaries
+*.exe
+*.dll
+
+# Compiled AngelScript modules
+*.bin
+
+# Misc dump files
+*.bin.readme.txt
+*.log.txt
