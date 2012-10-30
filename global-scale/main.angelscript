@@ -8,26 +8,11 @@
 	*/ 
 	SetFixedHeight(512.0f);
 
-	LoadScene("scenes/scene.esc", "onSceneLoaded", "onSceneUpdate");
-}
-
-void onSceneLoaded()
-{
+	LoadScene("scenes/scene.esc", "", "onSceneUpdate");
 }
 
 void onSceneUpdate()
 {
-	ETHInput@ input = GetInputHandle();
-	if (input.GetTouchState(0) == KS_HIT)
-	{
-		AddEntity("box.ent", vector3(input.GetCursorPos(), 0.0f), 0.0f);
-	}
-
-	if (input.GetKeyState(K_RMOUSE) == KS_HIT || input.GetTouchState(1) == KS_HIT)
-	{
-		AddEntity("boulder.ent", vector3(input.GetCursorPos(), 0.0f), 0.0f);
-	}
-
 	DrawExplanatoryText();
 }
 
