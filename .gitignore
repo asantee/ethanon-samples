@@ -22,6 +22,10 @@
 *.bin.readme.txt
 *.log.txt
 
+.DS_Store
+
+eth_util.angelscript
+
 */effects/readme.txt
 */entities/normalmaps/readme.txt
 */entities/readme.txt
