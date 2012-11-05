@@ -15,7 +15,6 @@ void main()
 	LoadScene("scenes/scene.esc");
 }
 
-
 void ETHCallback_ship(ETHEntity@ thisEntity)
 {
 	ETHInput@ input = GetInputHandle();
