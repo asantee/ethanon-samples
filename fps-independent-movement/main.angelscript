@@ -1,9 +1,9 @@
 ﻿/*
-	Here we have a simple example of how to shoot with our moving spaceship.
-	We created an entity called "shot" and we add the shot to scene when
-	we hit the "Space" key. We manipulate the projectile by adding a direction
-	vector from its callback function.
+	This example takes the "shooting-spaceship" code and make
+	all moving entities move at same speed, no matter what the
+	FPS rate is.
 
+	UnitsPerSecond function reference: http://doc.ethanonengine.com/api/function/80
 	More about entity callback functions: http://doc.ethanonengine.com/manual/32
 */
 
@@ -49,5 +49,5 @@ void ETHCallback_ship(ETHEntity@ thisEntity)
 void ETHCallback_shot(ETHEntity@ thisEntity)
 {
 	float speed = UnitsPerSecond(360.0f);
-	thisEntity.AddToPositionXY(vector2(0,-1) * speed);
+	thisEntity.AddToPositionXY(vector2(0.0f,-1.0f) * speed);
 }

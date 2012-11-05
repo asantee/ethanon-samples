@@ -21,12 +21,12 @@ void ETHCallback_ship(ETHEntity@ thisEntity)
 
 	if (input.KeyDown(K_RIGHT))
 	{
-		thisEntity.AddToPositionXY(vector2(1.0f,0.0f) * speed);
+		thisEntity.AddToPositionXY(vector2(1.0f, 0.0f) * speed);
 	}
 
 	if (input.KeyDown(K_LEFT))
 	{
-		thisEntity.AddToPositionXY(vector2(-1.0f,0.0f) * speed);
+		thisEntity.AddToPositionXY(vector2(-1.0f, 0.0f) * speed);
 	}
 
 	if (input.KeyDown(K_UP))
@@ -36,7 +36,7 @@ void ETHCallback_ship(ETHEntity@ thisEntity)
 
 	if (input.KeyDown(K_DOWN))
 	{
-		thisEntity.AddToPositionXY(vector2(0.0f,1.0f) * speed);
+		thisEntity.AddToPositionXY(vector2(0.0f, 1.0f) * speed);
 	}
 
 	if (input.GetKeyState(K_SPACE) == KS_HIT)
@@ -49,5 +49,5 @@ void ETHCallback_ship(ETHEntity@ thisEntity)
 void ETHCallback_shot(ETHEntity@ thisEntity)
 {
 	float speed = UnitsPerSecond(400.0f);
-	thisEntity.AddToPositionXY(vector2(0,-1) * speed);
+	thisEntity.AddToPositionXY(vector2(0.0f,-1.0f) * speed);
 }
