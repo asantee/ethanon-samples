@@ -18,24 +18,24 @@ void main()
 
 void ETHCallback_ship(ETHEntity@ thisEntity)
 {
-	ETHInput@ handle = GetInputHandle();
+	ETHInput@ input = GetInputHandle();
 
-	if(handle.KeyDown(K_RIGHT))
+	if (input.KeyDown(K_RIGHT))
 	{
 		thisEntity.AddToPositionXY(vector2(2.0f, 0.0f));
 	}
 
-	if(handle.KeyDown(K_LEFT))
+	if (input.KeyDown(K_LEFT))
 	{
 		thisEntity.AddToPositionXY(vector2(-2.0f, 0.0f));
 	}
 
-	if(handle.KeyDown(K_UP))
+	if (input.KeyDown(K_UP))
 	{
 		thisEntity.AddToPositionXY(vector2(0.0f,-2.0f));
 	}
 
-	if(handle.KeyDown(K_DOWN))
+	if (input.KeyDown(K_DOWN))
 	{
 		thisEntity.AddToPositionXY(vector2(0.0f, 2.0f));
 	}

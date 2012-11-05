@@ -1,60 +1,53 @@
 ﻿/*
-	Here we have a simple example of how we add a shot while we manipulated the ship in the scene.
-	We created an entity called "shot" and we add the shot in the scene when
-	we hit the "Space" key in our keyboard. We manipulated the shot, by add the direction of it,
-	with a Callback function(for more info about Callbacks: http://bit.ly/SdkvTE).
+	Here we have a simple example of how to shoot with our moving spaceship.
+	We created an entity called "shot" and we add the shot to scene when
+	we hit the "Space" key. We manipulate the projectile by adding a direction
+	vector from its callback function.
 
-	For more information see the Ethanon Engine manual: http://doc.ethanonengine.com/
+	More about entity callback functions: http://doc.ethanonengine.com/manual/32
 */
-#include "ETHFramework/IncludeModules.angelscript"
-
 
 void main()
 {
-	LoadScene("scenes/scene.esc", "", "");
-
+	LoadScene("scenes/scene.esc");
 }
 
-
-void ETHCallback_ship(ETHEntity @ thisEntity)
+void ETHCallback_ship(ETHEntity@ thisEntity)
 {
-	
-	ETHInput @ handle = GetInputHandle();
+	ETHInput@ input = GetInputHandle();
 
-	float speed = g_timeManager.scaledUnitsPerSecond(120.0f);
+	// computes the distance our ship must move in order to keep
+	// a speed of 60 pixels per second
+	float speed = UnitsPerSecond(120.0f);
 
-
-	if(handle.KeyDown(K_RIGHT))
+	if (input.KeyDown(K_RIGHT))
 	{
-		thisEntity.AddToPositionXY(vector2(1.0f,0.0f)*speed);
+		thisEntity.AddToPositionXY(vector2(1.0f, 0.0f) * speed);
 	}
 
-	if(handle.KeyDown(K_LEFT))
+	if (input.KeyDown(K_LEFT))
 	{
-		thisEntity.AddToPositionXY(vector2(-1.0f,0.0f)*speed);
+		thisEntity.AddToPositionXY(vector2(-1.0f, 0.0f) * speed);
 	}
 
-	if(handle.KeyDown(K_UP))
+	if (input.KeyDown(K_UP))
 	{
-		thisEntity.AddToPositionXY(vector2(0.0f,-1.0f)*speed);
+		thisEntity.AddToPositionXY(vector2(0.0f,-1.0f) * speed);
 	}
 
-	if(handle.KeyDown(K_DOWN))
+	if (input.KeyDown(K_DOWN))
 	{
-		thisEntity.AddToPositionXY(vector2(0.0f,1.0f)*speed);
+		thisEntity.AddToPositionXY(vector2(0.0f, 1.0f) * speed);
 	}
 
-	if(handle.GetKeyState(K_SPACE) == KS_HIT)
+	if (input.GetKeyState(K_SPACE) == KS_HIT)
 	{
-		AddEntity("shot.ent",thisEntity.GetPosition());
+		AddEntity("shot.ent", thisEntity.GetPosition());
 	}
-
 }
 
-void ETHCallback_shot(ETHEntity @ thisEntity)
+void ETHCallback_shot(ETHEntity@ thisEntity)
 {
-
-	float speed = g_timeManager.scaledUnitsPerSecond(120.0f);
-
-	thisEntity.AddToPositionXY(vector2(0,-1)*speed);
+	float speed = UnitsPerSecond(360.0f);
+	thisEntity.AddToPositionXY(vector2(0,-1) * speed);
 }
