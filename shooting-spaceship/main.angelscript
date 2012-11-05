@@ -45,4 +45,11 @@ void ETHCallback_ship(ETHEntity@ thisEntity)
 void ETHCallback_shot(ETHEntity@ thisEntity)
 {
 	thisEntity.AddToPositionXY(vector2(0.0f,-15.0f));
+
+	// if the projectile goes out of the screen view, delete it
+	if (thisEntity.GetPosition().y < 0.0f)
+	{
+		DeleteEntity(thisEntity);
+		print("projectile removed because it is no longer visible: ID " + thisEntity.GetID());
+	}
 }
