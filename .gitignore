@@ -25,6 +25,7 @@
 .DS_Store
 
 eth_util.angelscript
+Collide.angelscript
 
 */effects/readme.txt
 */entities/normalmaps/readme.txt
@@ -32,3 +33,10 @@ eth_util.angelscript
 */particles/readme.txt
 */scenes/readme.txt
 */soundfx/readme.txt
+
+*/*/effects/readme.txt
+*/*/entities/normalmaps/readme.txt
+*/*/entities/readme.txt
+*/*/particles/readme.txt
+*/*/scenes/readme.txt
+*/*/soundfx/readme.txt
