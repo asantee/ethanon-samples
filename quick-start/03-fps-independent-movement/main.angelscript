@@ -9,7 +9,12 @@
 
 void main()
 {
-	LoadScene("scenes/scene.esc");
+	LoadScene("scenes/scene.esc", "", "onSceneUpdate");
+}
+
+void onSceneUpdate()
+{
+	DrawText(vector2(0, 0), "No matter what the FPS rate is,\nthe ship speed will remain the same", "Verdana20.fnt", 0xFFFFFFFF);
 }
 
 void ETHCallback_ship(ETHEntity@ thisEntity)

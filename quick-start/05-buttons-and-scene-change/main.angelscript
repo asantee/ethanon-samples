@@ -68,15 +68,14 @@ void ETHCallback_start_button(ETHEntity@ thisEntity)
 	vector2 size = thisEntity.GetSize() * thisEntity.GetScale();
 
 	ETHInput@ input = GetInputHandle();
-		
-		if(input.GetTouchState(0) == KS_HIT)
+	
+	if (input.GetTouchState(0) == KS_HIT)
+	{
+		if(isPointInRect(input.GetTouchPos(0), thisEntity.GetPositionXY(), size, vector2(0.5f, 0.5f)))
 		{
-			if(isPointInRect(input.GetTouchPos(0), thisEntity.GetPositionXY(), size, vector2(0.5f, 0.5f)))
-			{
-				LoadScene("scenes/scene.esc");
-			}
+			LoadScene("scenes/scene.esc");
 		}
-		
+	}
 }
 
 void ETHCallback_return_button(ETHEntity@ thisEntity)
@@ -85,12 +84,11 @@ void ETHCallback_return_button(ETHEntity@ thisEntity)
 
 	ETHInput@ input = GetInputHandle();
 		
-		if(input.GetTouchState(0) == KS_HIT)
+	if (input.GetTouchState(0) == KS_HIT)
+	{
+		if(isPointInRect(input.GetTouchPos(0), thisEntity.GetPositionXY(), size, vector2(0.5f, 0.5f)))
 		{
-			if(isPointInRect(input.GetTouchPos(0), thisEntity.GetPositionXY(), size, vector2(0.5f, 0.5f)))
-			{
-				LoadScene("scenes/start_scene.esc");
-			}
+			LoadScene("scenes/start_scene.esc");
 		}
-		
+	}		
 }
