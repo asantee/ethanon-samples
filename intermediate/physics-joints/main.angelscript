@@ -1,6 +1,6 @@
 ﻿void main()
 {
-	LoadScene("scenes/joint_scene.esc.esc", "onSceneLoaded", "onSceneUpdate");
+	LoadScene("scenes/joint_scene.esc", "onSceneLoaded", "onSceneUpdate");
 }
 
 void onSceneLoaded()
