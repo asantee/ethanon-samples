@@ -17,7 +17,7 @@ How to run samples
 1. Open the terminal
 2. Run the following command:
    
-   open -a machine.app --args dir=/Users/*user-name*/*project-path*/
+   open -a machine.app --args dir=/Users/<user-name>/<project-path>/
    
    Don't forget the slash before *Users*
 
