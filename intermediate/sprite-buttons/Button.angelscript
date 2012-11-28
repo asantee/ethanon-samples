@@ -4,10 +4,8 @@
 	private vector2 m_pos;
 	private vector2 m_origin;
 	private vector2 m_size;
-	private string m_name;
-	private bool m_isTouched;
+	private bool m_isPressed;
 
-	
 	Button(const string _spriteName, const vector2 &in _pos, const vector2 &in _origin = vector2(0, 0))
 	{
 		m_origin = _origin;
@@ -15,17 +13,7 @@
 		m_pos = _pos;
 		LoadSprite(m_spriteName);
 		m_size = GetSpriteSize(m_spriteName);
-		m_isTouched = false;
-	}
-
-	void setName(const string &in _name)
-	{
-		m_name = _name;
-	}
-
-	string getName() const
-	{
-		return m_name;
+		m_isPressed = false;
 	}
 
 	vector2 getPos()
@@ -84,6 +72,7 @@
 	{
 		ETHInput@ input = GetInputHandle();
 
+		// check if any touch (or mouse) input is pressing the button
 		const uint touchCount = input.GetMaxTouchCount();
 		for (uint t = 0; t < touchCount; t++)
 		{
@@ -91,21 +80,20 @@
 			{
 				if (isPointInButton(input.GetTouchPos(t)))
 				{
-					m_isTouched = true;
+					m_isPressed = true;
 				}
 			}
-			if (m_isTouched)
-				break;
 		}
 		
 	}
 
-	bool isTouched()
+	bool isPressed()
 	{
-		return m_isTouched;
+		return m_isPressed;
 	}
-	void setTouched()
+
+	void setPressed(const bool pressed)
 	{
-		m_isTouched = !m_isTouched;
+		m_isPressed = pressed;
 	}
 }

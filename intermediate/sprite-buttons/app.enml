@@ -2,10 +2,7 @@ default
 {
 	title = Ethanon Engine;
 	richLighting = true;
-}
 
-windows
-{
 	width = 480;
 	height = 480;
 	windowed = true;
