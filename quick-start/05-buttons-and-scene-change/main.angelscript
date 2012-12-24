@@ -65,7 +65,7 @@ void ETHCallback_shot(ETHEntity@ thisEntity)
 
 void ETHCallback_start_button(ETHEntity@ thisEntity)
 {
-	vector2 size = thisEntity.GetSize() * thisEntity.GetScale();
+	vector2 size = thisEntity.GetSize();
 
 	ETHInput@ input = GetInputHandle();
 	
@@ -80,7 +80,7 @@ void ETHCallback_start_button(ETHEntity@ thisEntity)
 
 void ETHCallback_return_button(ETHEntity@ thisEntity)
 {
-	vector2 size = thisEntity.GetSize() * thisEntity.GetScale();
+	vector2 size = thisEntity.GetSize();
 
 	ETHInput@ input = GetInputHandle();
 		
