@@ -1,5 +1,4 @@
-﻿#include "isPointInRect.angelscript"
-#include "Button.angelscript"
+﻿#include "Button.angelscript"
 
 Button@ button;
 
@@ -10,7 +9,7 @@ void main()
 
 void onSceneLoaded()
 {
-	@button = Button("sprites/do-not-press.png", vector2(0.85f, 0.15f) * GetScreenSize(), vector2(0.5f, 0.5f));
+	@button = Button("sprites/do-not-press.png", vector2(0.9f, 0.10f) * GetScreenSize());
 
 	LoadSoundEffect("soundfx/explosion_huge.mp3");
 }

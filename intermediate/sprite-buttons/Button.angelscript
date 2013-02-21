@@ -1,4 +1,6 @@
-﻿class Button
+﻿#include "isPointInRect.angelscript"
+
+class Button
 {
 	private string m_spriteName;
 	private vector2 m_pos;
@@ -6,13 +8,13 @@
 	private vector2 m_size;
 	private bool m_isPressed;
 
-	Button(const string _spriteName, const vector2 &in _pos, const vector2 &in _origin = vector2(0, 0))
+	Button(const string _spriteName, const vector2 &in _pos, const vector2 &in _origin = vector2(0.5f, 0.5f))
 	{
 		m_origin = _origin;
 		m_spriteName = _spriteName;
 		m_pos = _pos;
 		LoadSprite(m_spriteName);
-		m_size = GetSpriteSize(m_spriteName);
+		m_size = GetSpriteFrameSize(m_spriteName);
 		m_isPressed = false;
 	}
 
@@ -54,7 +56,7 @@
 
 	void draw(const vector2 &in offset)
 	{
-		SetSpriteOrigin(m_spriteName,vector2(0.5f, 0.5f));
+		SetSpriteOrigin(m_spriteName, m_origin);
 		DrawSprite(m_spriteName, m_pos + offset);
 	}
 
