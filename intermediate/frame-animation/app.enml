@@ -1,13 +1,10 @@
 default
 {
-	title = Ethanon Engine;
+	title = Character animation sample;
 	richLighting = true;
-}
 
-windows
-{
-	width = 854;
-	height = 480;
+	width = 500;
+	height = 500;
 	windowed = true;
 	vsync = true;
 }
