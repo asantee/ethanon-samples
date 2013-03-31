@@ -1,0 +1,10 @@
+default
+{
+	title = Object-oriented programming sample;
+	richLighting = true;
+
+	width = 500;
+	height = 500;
+	windowed = true;
+	vsync = true;
+}
