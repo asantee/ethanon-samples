@@ -1,0 +1,9 @@
+default
+{
+	title = Ethanon Engine;
+	richLighting = true;
+	windowed = true;
+	vsync = true;
+	width = 854;
+	height = 480;
+}
