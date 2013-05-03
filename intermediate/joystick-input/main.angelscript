@@ -24,17 +24,33 @@ void onSceneUpdate()
 			for (uint b = 1; b <= input.GetNumJoyButtons(j); b++)
 			{
 				const J_KEY button = uintToButtonKey(b);
-				const KEY_STATE buttonState = input.JoyButtonState(j, button);
-				if (buttonState != KS_UP)
-				{
-					output += "K_" + buttonKeyToString(button) + "-" + stateNameToString(buttonState) + ", ";
-				}
+				output += generateButtonStatusString(j, button);
 			}
+
+			output += generateButtonStatusString(j, JK_LEFT);
+			output += generateButtonStatusString(j, JK_RIGHT);
+			output += generateButtonStatusString(j, JK_UP);
+			output += generateButtonStatusString(j, JK_DOWN);
+
 			output += "\n";
 		}
 	}
 
 	DrawText(vector2(0), output, "Verdana30_shadow.fnt", 0xFFFFFFFF);
+}
+
+string generateButtonStatusString(const uint j, const J_KEY button)
+{
+	ETHInput@ input = GetInputHandle();
+	const KEY_STATE buttonState = input.JoyButtonState(j, button);
+	if (buttonState != KS_UP)
+	{
+		return "K_" + buttonKeyToString(button) + "-" + stateNameToString(buttonState) + ", ";
+	}
+	else
+	{
+		return "";
+	}
 }
 
 string stateNameToString(const KEY_STATE state)
