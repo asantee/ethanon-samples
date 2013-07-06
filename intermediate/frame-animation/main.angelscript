@@ -51,7 +51,7 @@ void ETHCallback_witch(ETHEntity@ thisEntity)
 		g_frameTimer.update(0, 0, 150);
 
 	// update entity
-	const float speed = 1.5f;
+	const float speed = UnitsPerSecond(120.0f); // pixels per second
 	const uint currentFrame = g_frameTimer.getCurrentFrame();
 	thisEntity.AddToPositionXY(normalize(direction) * speed);
 	thisEntity.SetFrame(currentFrame, g_directionLine);
