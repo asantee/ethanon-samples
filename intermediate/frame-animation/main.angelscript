@@ -12,47 +12,60 @@ void onCreated()
 	AddEntity("witch.ent", vector3(screenMiddle, 0));
 }
 
-// global character properties
-FrameTimer g_frameTimer;
-uint g_directionLine = 0;
+// initializes the timer object
+void ETHConstructorCallback_witch(ETHEntity@ thisEntity)
+{
+	// instantiates a FrameTimer object a copies a reference to it into the character entity
+	FrameTimer frameTimer;
+	thisEntity.SetObject("frameTimer", @frameTimer);
+
+	// creates a variable the control the current line in the sprite sheet
+	thisEntity.SetUInt("directionLine", 0);
+}
 
 // control character
 void ETHCallback_witch(ETHEntity@ thisEntity)
 {
+	// retrieves the FrameTimer object reference from the entity
+	FrameTimer@ frameTimer;
+	thisEntity.GetObject("frameTimer", @frameTimer);
+
 	ETHInput@ input = GetInputHandle();
 	vector2 direction(0, 0);
 
 	// find current move direction based on keyboard keys
 	if (input.KeyDown(K_DOWN))
 	{
-		g_directionLine = 0;
+		thisEntity.SetUInt("directionLine", 0);
 		direction += vector2(0, 1);
 	}
 	if (input.KeyDown(K_LEFT))
 	{
-		g_directionLine = 1;
+		thisEntity.SetUInt("directionLine", 1);
 		direction += vector2(-1, 0);
 	}
 	if (input.KeyDown(K_RIGHT))
 	{
-		g_directionLine = 2;
+		thisEntity.SetUInt("directionLine", 2);
 		direction += vector2(1, 0);
 	}
 	if (input.KeyDown(K_UP))
 	{
-		g_directionLine = 3;
+		thisEntity.SetUInt("directionLine", 3);
 		direction += vector2(0,-1);
 	}
 
 	// if there's movement, update animation
 	if (direction.length() != 0.0f)
-		g_frameTimer.update(0, 3, 150);
+		frameTimer.update(0, 3, 150);
 	else
-		g_frameTimer.update(0, 0, 150);
+		frameTimer.update(0, 0, 150);
 
 	// update entity
 	const float speed = UnitsPerSecond(120.0f); // pixels per second
-	const uint currentFrame = g_frameTimer.getCurrentFrame();
+	const uint currentFrame = frameTimer.getCurrentFrame();
 	thisEntity.AddToPositionXY(normalize(direction) * speed);
-	thisEntity.SetFrame(currentFrame, g_directionLine);
+
+	// finds the current entity frame based on column x row
+	thisEntity.SetFrame(currentFrame, thisEntity.GetUInt("directionLine"));
 }
