@@ -1,19 +1,64 @@
 ﻿/*
-	This example shows how to change scenes with entities acting like
-	buttons.
+	This example shows how to change scenes with sprite-based buttons.
 
-	We create a starting scene with two entities, like a starting menu.
-	If the user clicks in the "start game" button, the game begins. In the 
+	If the user clicks the "start game" button, the game begins. In the 
 	game, we have another button to return to the start scene.
 
 	For more information see the Ethanon Engine manual: http://doc.ethanonengine.com/
 */
 
-#include "isPointInRect.angelscript"
+#include "Button.angelscript"
 
+/*****************************************************
+	Starting scene
+*****************************************************/
 void main()
 {
-	LoadScene("scenes/start_scene.esc");
+	LoadScene("scenes/start_scene.esc", "createStartScene", "updateStartScene");
+}
+
+Button@ g_startGameButton;
+
+void createStartScene()
+{
+	vector2 startButtonPos(GetScreenSize() * vector2(0.5f, 0.75f));
+	@g_startGameButton = Button("sprites/start_game.png", startButtonPos);
+}
+
+void updateStartScene()
+{
+	// draw and check button
+	g_startGameButton.putButton();
+	if (g_startGameButton.isPressed())
+	{
+		LoadScene("scenes/scene.esc", "createGameScene", "updateGameScene");
+	}
+
+	// draw centered game title sprite
+	SetSpriteOrigin("sprites/main_logo.png", vector2(0.5f, 0.5f));
+	DrawSprite("sprites/main_logo.png", GetScreenSize() * vector2(0.5f, 0.25f));
+}
+
+/*****************************************************
+	Game scene
+*****************************************************/
+Button@ g_returnButton;
+
+void createGameScene()
+{
+	vector2 returnButtonPos(GetScreenSize() * vector2(1.0f, 0.0f));
+	vector2 returnButtonOrigin(1.0f, 0.0f);
+	@g_returnButton = Button("sprites/return_button.png", returnButtonPos, returnButtonOrigin);
+}
+
+void updateGameScene()
+{
+	// draw and check button
+	g_returnButton.putButton();
+	if (g_returnButton.isPressed())
+	{
+		LoadScene("scenes/start_scene.esc", "createStartScene", "updateStartScene");
+	}
 }
 
 void ETHCallback_ship(ETHEntity@ thisEntity)
@@ -61,34 +106,4 @@ void ETHCallback_shot(ETHEntity@ thisEntity)
 		DeleteEntity(thisEntity);
 		print("projectile removed because it is no longer visible: ID " + thisEntity.GetID());
 	}
-}
-
-void ETHCallback_start_button(ETHEntity@ thisEntity)
-{
-	vector2 size = thisEntity.GetSize();
-
-	ETHInput@ input = GetInputHandle();
-	
-	if (input.GetTouchState(0) == KS_HIT)
-	{
-		if(isPointInRect(input.GetTouchPos(0), thisEntity.GetPositionXY(), size, vector2(0.5f, 0.5f)))
-		{
-			LoadScene("scenes/scene.esc");
-		}
-	}
-}
-
-void ETHCallback_return_button(ETHEntity@ thisEntity)
-{
-	vector2 size = thisEntity.GetSize();
-
-	ETHInput@ input = GetInputHandle();
-		
-	if (input.GetTouchState(0) == KS_HIT)
-	{
-		if(isPointInRect(input.GetTouchPos(0), thisEntity.GetPositionXY(), size, vector2(0.5f, 0.5f)))
-		{
-			LoadScene("scenes/start_scene.esc");
-		}
-	}		
 }
