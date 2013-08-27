@@ -9,12 +9,22 @@
 
 #include "Button.angelscript"
 
+void loadStartScene()
+{
+	LoadScene("scenes/start_scene.esc", "createStartScene", "updateStartScene");
+}
+
+void loadGameScene()
+{
+	LoadScene("scenes/scene.esc", "createGameScene", "updateGameScene");
+}
+
 /*****************************************************
 	Starting scene
 *****************************************************/
 void main()
 {
-	LoadScene("scenes/start_scene.esc", "createStartScene", "updateStartScene");
+	loadStartScene();
 }
 
 Button@ g_startGameButton;
@@ -31,7 +41,7 @@ void updateStartScene()
 	g_startGameButton.putButton();
 	if (g_startGameButton.isPressed())
 	{
-		LoadScene("scenes/scene.esc", "createGameScene", "updateGameScene");
+		loadGameScene();
 	}
 
 	// draw centered game title sprite
@@ -57,7 +67,7 @@ void updateGameScene()
 	g_returnButton.putButton();
 	if (g_returnButton.isPressed())
 	{
-		LoadScene("scenes/start_scene.esc", "createStartScene", "updateStartScene");
+		loadStartScene();
 	}
 }
 
@@ -104,6 +114,5 @@ void ETHCallback_shot(ETHEntity@ thisEntity)
 	if (thisEntity.GetPosition().y < 0.0f)
 	{
 		DeleteEntity(thisEntity);
-		print("projectile removed because it is no longer visible: ID " + thisEntity.GetID());
 	}
 }
