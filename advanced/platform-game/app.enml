@@ -1,0 +1,10 @@
+default
+{
+	title = Platform side-scrolling gameplay sample;
+	richLighting = true;
+
+	width = 854;
+	height = 480;
+	windowed = true;
+	vsync = true;
+}
