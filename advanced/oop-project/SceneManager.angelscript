@@ -7,6 +7,12 @@ class SceneManager
 	void setCurrentScene(Scene@ scene)
 	{
 		@m_currentScene = @scene;
+		LoadScene(
+			scene.getSceneFileName(),
+			"onSceneCreated",
+			"onSceneUpdate",
+			"onResume",
+			scene.getBucketSize());
 	}
 
 	void runOnSceneCreatedFunction()
@@ -20,6 +26,12 @@ class SceneManager
 		if (m_currentScene !is null)
 			m_currentScene.onUpdate();
 	}
+
+	void runOnResumeFunction()
+	{
+		if (m_currentScene !is null)
+			m_currentScene.onResume();
+	}
 }
 
 SceneManager g_sceneManager;
@@ -32,4 +44,9 @@ void onSceneCreated()
 void onSceneUpdate()
 {
 	g_sceneManager.runOnSceneUpdateFunction();
+}
+
+void onResume()
+{
+	g_sceneManager.runOnResumeFunction();
 }

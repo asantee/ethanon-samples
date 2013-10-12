@@ -1,15 +1,25 @@
 ﻿class Scene
 {
-	Scene(const string &in sceneFileName)
+	private string m_sceneFileName;
+	private vector2 m_bucketSize;
+
+	Scene(const string &in sceneFileName, const vector2 bucketSize = vector2(256.0f, 256.0f))
 	{
-		LoadScene(sceneFileName, "onSceneCreated", "onSceneUpdate");
+		m_sceneFileName = sceneFileName;
+		m_bucketSize = bucketSize;
 	}
 
-	void onCreated()
+	vector2 getBucketSize() const
 	{
+		return m_bucketSize;
 	}
 
-	void onUpdate()
+	string getSceneFileName() const
 	{
+		return m_sceneFileName;
 	}
+
+	void onCreated() { }
+	void onUpdate() { }
+	void onResume() { }
 }
