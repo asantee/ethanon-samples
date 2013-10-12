@@ -6,7 +6,7 @@
         <Particles />
         <Collision>
             <Position x="0" y="0" z="0" />
-            <Size x="62" y="62" z="1" />
+            <Size x="64" y="64" z="1" />
         </Collision>
         <CustomData />
     </Entity>
