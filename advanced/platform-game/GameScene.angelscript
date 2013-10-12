@@ -1,10 +1,12 @@
 ﻿#include "Button.angelscript"
 #include "Character.angelscript"
+#include "MainCharacterController.angelscript"
 
 class GameScene : Scene
 {
 	private Button@ m_exitButton;
 	private Character@ m_character;
+	private MainCharacterController m_characterController;
 
 	GameScene()
 	{
@@ -25,7 +27,8 @@ class GameScene : Scene
 
 	void onUpdate()
 	{
-		m_character.update();
+		m_characterController.update();
+		m_character.update(@m_characterController);
 
 		m_exitButton.putButton();
 		if (m_exitButton.isPressed())
