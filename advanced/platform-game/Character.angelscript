@@ -38,7 +38,7 @@ class Character
 		return m_touchingGround;
 	}
 
-	void updateMovement(ETHPhysicsController@ physicsController, const float movementSpeed)
+	private void updateMovement(ETHPhysicsController@ physicsController, const float movementSpeed)
 	{
 		// if there's movement, update animation
 		if (movementSpeed != 0.0f)
@@ -64,7 +64,7 @@ class Character
 		}
 	}
 
-	void updateJumpImpulse(ETHPhysicsController@ physicsController, const float jumpImpulse)
+	private void updateJumpImpulse(ETHPhysicsController@ physicsController, const float jumpImpulse)
 	{
 		const vector2 currentVelocity = physicsController.GetLinearVelocity();
 
@@ -87,7 +87,7 @@ class Character
 		}
 	}
 
-	void checkGroundTouch()
+	private void checkGroundTouch()
 	{
 		// if the last time a ground touch had been detected was over a few
 		// milliseconds ago, we assume it is no longer touching the ground 
