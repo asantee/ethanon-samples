@@ -1,6 +1,6 @@
 default
 {
-	title = Platform side-scrolling gameplay sample;
+	title = Simple platform gameplay sample;
 	richLighting = true;
 
 	width = 854;
