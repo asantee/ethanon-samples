@@ -1,0 +1,178 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <SceneProperties lightIntensity="2" parallaxIntensity="5">
+        <Ambient r="1" g="1" b="1" />
+        <ZAxisDirection x="0" y="0" />
+    </SceneProperties>
+    <EntitiesInScene>
+        <Entity id="38" spriteFrame="1">
+            <EntityName>single_piece.ent</EntityName>
+            <Position x="832" y="384" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <SpriteCut x="1" y="3" />
+                <Sprite>single-pieces.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="66" y="62" z="1" />
+                </Collision>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="37" spriteFrame="0">
+            <EntityName>single_piece.ent</EntityName>
+            <Position x="512" y="224" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <SpriteCut x="1" y="3" />
+                <Sprite>single-pieces.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="66" y="62" z="1" />
+                </Collision>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="34" spriteFrame="1">
+            <EntityName>wide_tile.ent</EntityName>
+            <Position x="864" y="448" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <SpriteCut x="1" y="3" />
+                <Sprite>tiles.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="190" y="62" z="1" />
+                </Collision>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="32" spriteFrame="4">
+            <EntityName>tile.ent</EntityName>
+            <Position x="736" y="448" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <SpriteCut x="3" y="3" />
+                <Sprite>tiles.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="62" y="62" z="1" />
+                </Collision>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="31" spriteFrame="3">
+            <EntityName>tile.ent</EntityName>
+            <Position x="672" y="448" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <SpriteCut x="3" y="3" />
+                <Sprite>tiles.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="62" y="62" z="1" />
+                </Collision>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="29" spriteFrame="0">
+            <EntityName>transition_tile.ent</EntityName>
+            <Position x="608" y="448" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <SpriteCut x="2" y="3" />
+                <Sprite>transition-tiles.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="62" y="62" z="1" />
+                </Collision>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="28" spriteFrame="1">
+            <EntityName>tile.ent</EntityName>
+            <Position x="544" y="448" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <SpriteCut x="3" y="3" />
+                <Sprite>tiles.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="62" y="62" z="1" />
+                </Collision>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="36" spriteFrame="2">
+            <EntityName>single_piece.ent</EntityName>
+            <Position x="128" y="224" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <SpriteCut x="1" y="3" />
+                <Sprite>single-pieces.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="66" y="62" z="1" />
+                </Collision>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="35" spriteFrame="2">
+            <EntityName>single_piece.ent</EntityName>
+            <Position x="256" y="384" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <SpriteCut x="1" y="3" />
+                <Sprite>single-pieces.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="66" y="62" z="1" />
+                </Collision>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="27" spriteFrame="0">
+            <EntityName>tile.ent</EntityName>
+            <Position x="480" y="448" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <SpriteCut x="3" y="3" />
+                <Sprite>tiles.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="62" y="62" z="1" />
+                </Collision>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="26" spriteFrame="4">
+            <EntityName>transition_tile.ent</EntityName>
+            <Position x="416" y="448" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <SpriteCut x="2" y="3" />
+                <Sprite>transition-tiles.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="62" y="62" z="1" />
+                </Collision>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="9" spriteFrame="2">
+            <EntityName>wide_tile.ent</EntityName>
+            <Position x="288" y="448" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <SpriteCut x="1" y="3" />
+                <Sprite>tiles.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="190" y="62" z="1" />
+                </Collision>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="8" spriteFrame="2">
+            <EntityName>wide_tile.ent</EntityName>
+            <Position x="96" y="448" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <SpriteCut x="1" y="3" />
+                <Sprite>tiles.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="190" y="62" z="1" />
+                </Collision>
+                <CustomData />
+            </Entity>
+        </Entity>
+    </EntitiesInScene>
+</Ethanon>

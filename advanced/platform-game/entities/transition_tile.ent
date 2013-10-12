@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <SpriteCut x="2" y="3" />
+        <Sprite>transition-tiles.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="62" y="62" z="1" />
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

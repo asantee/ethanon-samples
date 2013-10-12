@@ -13,10 +13,7 @@ class MainMenuScene : Scene
 	void onCreated()
 	{
 		const vector2 screenMiddle(GetScreenSize() * 0.5f);
-
 		@m_startGameButton = Button("sprites/start_game.png", screenMiddle);
-
-		AddEntity("background.ent", vector3(screenMiddle, 0.0f));
 	}
 
 	void onUpdate()

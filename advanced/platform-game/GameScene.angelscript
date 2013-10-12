@@ -8,7 +8,7 @@ class GameScene : Scene
 
 	GameScene()
 	{
-		const string sceneName = "empty";
+		const string sceneName = "scenes/platforms.esc";
 		super(sceneName);
 	}
 
@@ -17,6 +17,9 @@ class GameScene : Scene
 		@m_exitButton = Button("sprites/return_button.png", vector2(0.0f, 0.0f), vector2(0.0f, 0.0f));
 
 		const vector2 screenMiddle(GetScreenSize() * 0.5f);
+
+		AddEntity("background.ent", vector3(screenMiddle, -10.0f));
+
 		@m_character = Character("witch.ent", screenMiddle);
 	}
 
