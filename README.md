@@ -4,6 +4,8 @@ ethanon-samples
 How to run samples
 ------------------
 
+Make sure you have the latest stable release of Ethanon Engine.
+
 ### Windows
 
 1. Open the editor
