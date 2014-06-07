@@ -1,6 +1,4 @@
-﻿#include "Scene.angelscript"
-
-class SceneManager
+﻿class SceneManager
 {
 	Scene@ m_currentScene;
 

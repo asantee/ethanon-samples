@@ -1,6 +1,4 @@
-﻿#include "isPointInRect.angelscript"
-
-class Button
+﻿class Button
 {
 	private string m_spriteName;
 	private vector2 m_pos;

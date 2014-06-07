@@ -1,8 +1,4 @@
-﻿#include "Button.angelscript"
-#include "Character.angelscript"
-#include "MainCharacterController.angelscript"
-
-class GameScene : Scene
+﻿class GameScene : Scene
 {
 	private Button@ m_exitButton;
 	private Character@ m_character;
@@ -14,7 +10,7 @@ class GameScene : Scene
 		super(sceneName);
 	}
 
-	void onCreated()
+	void onCreated() override
 	{
 		@m_exitButton = Button("sprites/return_button.png", vector2(0.0f, 0.0f), vector2(0.0f, 0.0f));
 
@@ -25,7 +21,7 @@ class GameScene : Scene
 		@m_character = Character("witch.ent", screenMiddle);
 	}
 
-	void onUpdate()
+	void onUpdate() override
 	{
 		m_characterController.update();
 		m_character.update(@m_characterController);

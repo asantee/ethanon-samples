@@ -1,7 +1,4 @@
-﻿#include "FrameTimer.angelscript"
-#include "CharacterController.angelscript"
-
-class Character
+﻿class Character
 {
 	ETHEntity@ m_entity;
 

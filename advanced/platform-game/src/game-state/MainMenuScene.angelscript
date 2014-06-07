@@ -1,6 +1,4 @@
-﻿#include "Button.angelscript"
-
-class MainMenuScene : Scene
+﻿class MainMenuScene : Scene
 {
 	private Button@ m_startGameButton;
 
@@ -10,13 +8,13 @@ class MainMenuScene : Scene
 		super(sceneName);
 	}
 
-	void onCreated()
+	void onCreated() override
 	{
 		const vector2 screenMiddle(GetScreenSize() * 0.5f);
 		@m_startGameButton = Button("sprites/start_game.png", screenMiddle);
 	}
 
-	void onUpdate()
+	void onUpdate() override
 	{
 		m_startGameButton.putButton();
 
