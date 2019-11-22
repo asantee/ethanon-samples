@@ -3,8 +3,8 @@ default
 	title = Object-oriented programming sample;
 	richLighting = true;
 
-	width = 500;
-	height = 500;
+	width = 640;
+	height = 480;
 	windowed = true;
 	vsync = true;
 }

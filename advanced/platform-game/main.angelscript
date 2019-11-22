@@ -14,5 +14,7 @@
 
 void main()
 {
+	SetFixedHeight(720.0f);
+
 	g_sceneManager.setCurrentScene(MainMenuScene());
 }
