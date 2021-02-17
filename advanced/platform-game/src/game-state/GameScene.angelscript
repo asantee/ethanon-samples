@@ -3,11 +3,14 @@
 	private Button@ m_exitButton;
 	private Character@ m_character;
 	private MainCharacterController m_characterController;
+	private CameraController@ m_cameraController;
 
 	GameScene()
 	{
 		const string sceneName = "scenes/platforms.esc";
 		super(sceneName);
+
+		@m_cameraController = StaticCameraController();
 	}
 
 	void onCreated() override
@@ -25,6 +28,9 @@
 	{
 		m_characterController.update();
 		m_character.update(@m_characterController);
+
+		m_cameraController.update();
+		SetCameraPos(m_cameraController.getCameraMiddlePos() - (GetScreenSize() / 2.0f));
 
 		m_exitButton.putButton();
 		if (m_exitButton.isPressed())

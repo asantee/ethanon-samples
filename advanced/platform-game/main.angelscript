@@ -12,6 +12,9 @@
 #include "src/character/CharacterController.angelscript"
 #include "src/character/MainCharacterController.angelscript"
 
+#include "src/gameplay/CameraController.angelscript"
+#include "src/gameplay/StaticCameraController.angelscript"
+
 void main()
 {
 	SetFixedHeight(720.0f);
