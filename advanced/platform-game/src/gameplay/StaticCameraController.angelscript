@@ -1,12 +1,15 @@
 class StaticCameraController : CameraController
 {
+	private vector2 m_cameraMiddlePos;
+
 	void update() override
 	{
-		// since it's a static camera, do nothing
+		// find screent middle point
+		m_cameraMiddlePos = GetScreenSize() / 2.0f;
 	}
 
 	vector2 getCameraMiddlePos() override
 	{
-		return vector2(GetScreenSize() / 2.0f);
+		return m_cameraMiddlePos;
 	}
 }
