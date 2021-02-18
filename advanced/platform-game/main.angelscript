@@ -14,6 +14,7 @@
 
 #include "src/gameplay/CameraController.angelscript"
 #include "src/gameplay/StaticCameraController.angelscript"
+#include "src/gameplay/CharacterCameraController.angelscript"
 
 void main()
 {

@@ -9,8 +9,6 @@
 	{
 		const string sceneName = "scenes/platforms.esc";
 		super(sceneName);
-
-		@m_cameraController = StaticCameraController();
 	}
 
 	void onCreated() override
@@ -22,6 +20,8 @@
 		AddEntity("background.ent", vector3(screenMiddle, -10.0f));
 
 		@m_character = Character("witch.ent", screenMiddle);
+
+		@m_cameraController = CharacterCameraController(@m_character);
 	}
 
 	void onUpdate() override

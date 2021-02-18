@@ -30,6 +30,11 @@
 		m_entity.SetFrame(m_frameColumn, m_directionLine);
 	}
 
+	vector2 getPosition()
+	{
+		return m_entity.GetPositionXY();
+	}
+
 	bool isTouchingGround() const
 	{
 		return m_touchingGround;
