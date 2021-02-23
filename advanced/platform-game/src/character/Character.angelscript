@@ -7,6 +7,9 @@
 	private uint m_frameColumn = 0;
 	private bool m_touchingGround = false;
 
+	private uint m_jumpsInTheAirCount = 0;
+	private uint m_maxJumpsInTheAir = 1;
+
 	Character(const string &in entityName, const vector2 pos)
 	{
 		// add character entity and rename it to "character" for matching character-
@@ -70,14 +73,13 @@
 	{
 		const vector2 currentVelocity = physicsController.GetLinearVelocity();
 
+		bool jumpAllowed = false;
+
 		// apply jump impulse
 		if (isTouchingGround())
 		{
-			if (jumpImpulse != 0.0f)
-			{
-				// apply jump impulse leaving horizontal speed as it is
-				physicsController.SetLinearVelocity(vector2(currentVelocity.x, jumpImpulse));
-			}
+			jumpAllowed = true;
+			m_jumpsInTheAirCount = 0;
 		}
 		else
 		{
@@ -86,6 +88,19 @@
 				m_frameColumn = 2;
 			else
 				m_frameColumn = 1;
+
+			// validate jump in the air
+			if (abs(jumpImpulse) > 0.0f && m_jumpsInTheAirCount < m_maxJumpsInTheAir)
+			{
+				jumpAllowed = true;
+				++m_jumpsInTheAirCount;
+			}
+		}
+
+		if (jumpAllowed && jumpImpulse != 0.0f)
+		{
+			// apply jump impulse leaving horizontal speed as it is
+			physicsController.SetLinearVelocity(vector2(currentVelocity.x, jumpImpulse));
 		}
 	}
 
